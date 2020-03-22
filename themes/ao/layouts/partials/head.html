@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>{{ block "title" . }}
+{{- .Site.Title -}}
+{{ if .Title }} - {{ .Title -}}{{ end }}
+{{ end }}</title>
+
+{{ if .Description }}
+<meta name="description" content="{{ .Description }}" />
+{{ end }}
+{{ if .Keywords }}
+<meta name="keywords" content="{{ delimit .Keywords "," }}" />
+{{ end }}
+{{ if .Params.Author }}
+<meta name="author" content="{{ .Params.Author}}" />
+<meta itemprop="name" content="{{ .Params.Author}}" />
+{{ end }}
+
+{{ if .Site.IsServer }}
+    {{ $style := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/dev/postcss.config.js") }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ else }}
+    {{ $style := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") | minify | fingerprint }}
+    <!-- <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}"> -->
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}
+
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+<!-- <meta name="date" content="2015-12-21 10:18:13">
+<meta name="lastmodified" content="2016-01-27 15:54:00"> -->
+
+<meta name="robots" content="index,follow">
+{{ hugo.Generator }}

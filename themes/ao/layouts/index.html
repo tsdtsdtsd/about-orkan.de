@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<div class="md:pl-16 pl-0">
+    <h1 class="sm:font-light text-2xl sm:text-3xl md:text-4xl text-gray-100 mt-6" itemprop="headline">
+        {{ .Params.headline }} <strong class="text-teal-500">{{ .Params.headlineStrong }}</strong>
+    </h1>
+    <p class="sm:text-2xl text-gray-100">{{ .Params.subline }}</p>
+
+    <p class="sm:text-xl text-gray-600 mt-3 leading-relaxed">
+        {{ delimit .Params.skills ", " }}
+    </p>
+</div>
+
+<div class="md:mx-16 md:mb-16 md:mt-6 m-0 flex flex-wrap text-gray-500">
+    {{ range .Params.links }}
+        <div class="flex-none text-center pr-4 py-2 mr-2">
+            <a class="hover:text-teal-500 hover:underline" href="{{ .url }}">
+                <div class="{{ .icon }} text-4xl leading-4xl"></div>
+                {{ .name }}
+            </a> 
+        </div>
+    {{ end }}
+</div>
+{{ end }}

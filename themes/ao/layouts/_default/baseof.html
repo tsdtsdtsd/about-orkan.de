@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='{{ .Site.LanguageCode }}'>
+    {{ partial "head.html" . }}
+    
+    <body class="antialiased bg-gray-800" itemscope itemtype="http://schema.org/WebPage" itemprop="mainContentOfPage">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:p-8 min-h-screen max-w-5xl mx-auto">
+            <section class="flex-grow flex flex-col justify-center p-12 lg:overflow-hidden">
+                {{- block "main" . }}{{- end }}
+                {{- partial "footer.html" . -}}
+            </section>
+
+        </div>
+
+        {{ if not .Site.IsServer }}
+            <script>
+                var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.orkhive.de/" : "http://piwik.orkhive.de/");
+                document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            <script type="text/javascript">
+                    try {
+                        var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+                        // piwikTracker.setDocumentTitle('Wer ist Orkan Alat?');
+                        piwikTracker.trackPageView();
+                        piwikTracker.enableLinkTracking();
+                    } catch( err ) {}
+            </script><noscript><p><img src="http://piwik.orkhive.de/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
+        {{ end }}
+
+    </body>
+</html>
