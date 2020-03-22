@@ -1,6 +1,12 @@
 {{ define "main" }}
-<article class="text-gray-700 mx-4 sm:mx-12">
-    <h1 class="font-bold text-3xl text-gray-700">{{ .Title }}</h1>
+<div class="md:pl-16 pl-0 text-gray-100">
+
+    {{ partial "backbutton.html" . }}
+
+    <h1 class="sm:font-light text-2xl sm:text-3xl md:text-4xl mt-6">
+        {{ .Params.title }}
+    </h1>
+
     {{ .Content }}
-</article>
+</div>
 {{ end }}
