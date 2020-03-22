@@ -1,9 +1,6 @@
 name: hugo
 
-on:
-  push:
-    branches:
-      - master
+on: [push]
 
 jobs:
   deploy:
