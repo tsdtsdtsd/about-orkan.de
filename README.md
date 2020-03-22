@@ -1,6 +1,6 @@
 # about-orkan.de
 
-Sources of my personal vCard site about-orkan.de
+Sources of my personal vCard site [about-orkan.de](https://www.about-orkan.de).
 
 ## Layout
 
@@ -22,4 +22,10 @@ npm run production
 ```sh
 npm install -g postcss-cli
 npm install -g autoprefixer
+
+# dev
+hugo server --disableFastRender
+
+# prod
+hugo --minify -v
 ```
