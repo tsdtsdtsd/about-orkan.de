@@ -1,4 +1,19 @@
-baseURL = "http://example.org/"
-languageCode = "de-de"
-title = "My New Hugo Site"
+baseURL = "https://www.about-orkan.de/"
 theme = "ao"
+languageCode = "de-de"
+title = "Orkan Alat"
+author = "Orkan Alat"
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[params]
+    name = "Hugo Tailwindcss Starter"
+    description = "A simple bootstraped theme for Hugo, build with Tailwindcss."
+
+    show_github_repo = true
+    github_repo = "https://github.com/tsdtsdtsd/about-orkan.de"
+
+    favicon = "favicon.ico"
+
+[markup.goldmark.renderer]
+    unsafe= true
