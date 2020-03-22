@@ -13,12 +13,13 @@ module.exports = {
             content: [
                 themeDir + 'layouts/**/*.html',
                 themeDir + 'exampleSite/content/**/*.html',
+                themeDir + '../../public/**/*.html',
                 'layouts/**/*.html',
                 'content/**/*.html',
             ],
             // Include any special characters you're using in this regular expression
             defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [], 
-            fontFace: true
+            fontFace: false
         }),    
         require('autoprefixer')({
             grid: true

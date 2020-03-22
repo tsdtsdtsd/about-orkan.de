@@ -1,11 +1,11 @@
 <div class="md:pl-16 pt-16 text-gray-600">
     <p class="sm:text-l">
+        {{ $home := .Site.Home }}
         {{ if not .IsHome }}
-            {{ $home := .Site.Home }}
             <a class="hover:text-teal-500 underline" href="{{ $home.Permalink }}">Startseite</a> |
         {{ end }}
-        <a class="hover:text-teal-500 underline" href="/impressum">Impressum</a> | 
-        <a class="hover:text-teal-500 underline" href="/datenschutz">Datenschutz</a>
+        <a class="hover:text-teal-500 underline" href="{{ $home.Permalink }}impressum/">Impressum</a> | 
+        <a class="hover:text-teal-500 underline" href="{{ $home.Permalink }}datenschutz/">Datenschutz</a>
     </p>
     <p class="pt-8 sm:text-l">
         Made with <i class="icon-heart text-pink-600"></i> and a helping hand from <a class="hover:text-teal-500 underline" href="https://gohugo.io/">Hugo</a> & <a class="hover:text-teal-500 underline" href="https://tailwindcss.com/">Tailwind CSS</a>.<br>
