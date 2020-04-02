@@ -17,16 +17,16 @@ skills:
 links:
     - name: GitHub
       icon: icon-github
-      url: http://github.com/tsdtsdtsd
+      url: https://github.com/tsdtsdtsd
     - name: GitLab
       icon: icon-gitlab
-      url: http://gitlab.com/tsdtsdtsd
+      url: https://gitlab.com/tsdtsdtsd
     - name: XING
       icon: icon-xing
       url: https://www.xing.com/profile/Orkan_Alat
     - name: LinkedIn
       icon: icon-linkedin
-      url: http://de.linkedin.com/pub/orkan-alat/55/63b/707/
+      url: https://de.linkedin.com/pub/orkan-alat/55/63b/707/
 ---
 
 Live long and code.
