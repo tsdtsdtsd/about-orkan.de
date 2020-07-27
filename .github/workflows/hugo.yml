@@ -33,7 +33,7 @@ jobs:
             ${{ runner.os }}-node-
 
       # - run: npm ci
-      - run: hugo --minify --v
+      - run: hugo --minify -v
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
