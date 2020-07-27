@@ -52,4 +52,4 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           passphrase: ${{ secrets.DEPLOY_PASSPHRASE }}
           source: "public"
-          target: "site"
+          target: "develop"
