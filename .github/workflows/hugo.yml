@@ -3,7 +3,7 @@ name: hugo
 on:
   push:
     branches:
-      - development
+      - develop
 
 jobs:
   deploy:
@@ -16,8 +16,30 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.68.1'
-          # extended: true
+          hugo-version: '0.74.2' #'0.68.1'
+          extended: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm ci
+      - run: hugo --minify --v
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: hugo-pub
+          path: ./public
 
       - name: Build
         run: hugo --minify
