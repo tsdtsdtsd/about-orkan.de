@@ -247,9 +247,16 @@ var klaroConfig = {
             passed as the second parameter.
             */
             callback: function(consent, app) {
-                console.log(
-                    'User consent for app ' + app.name + ': consent=' + consent
-                );
+                // console.log(
+                //     'User consent for app ' + app.name + ': consent=' + consent
+                // );
+
+                if(consent) {
+                    _paq.push(['rememberCookieConsentGiven']);
+                }
+                else {
+                    _paq.push(['forgetCookieConsentGiven']);
+                }
             },
 
             /*
@@ -289,9 +296,11 @@ var klaroConfig = {
         first parameter to the function (true=consented). The `app` config will be
         passed as the second parameter.
         */
-        console.log(
-            'User consent for app ' + app.name + ': consent=' + consent
-        );
+
+        // console.log(
+        //     'User consent for app ' + app.name + ': consent=' + consent
+        // );
+
     },
 
 };

@@ -13,14 +13,10 @@
 
         {{ if not .Site.IsServer }}
             <!-- Matomo -->
-            <script type="text/plain"
-                data-type="application/javascript"
-                data-src="https://matomo.orkhive.de/matomo.js"
-                data-name="matomo">
+            <script type="text/javascript">
                     var _paq = window._paq = window._paq || [];
-                    // require user consent before processing data
-                    // _paq.push(['requireConsent']);
                     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+                    _paq.push(['requireCookieConsent']);
                     _paq.push(['trackPageView']);
                     _paq.push(['enableLinkTracking']);
                     (function() {

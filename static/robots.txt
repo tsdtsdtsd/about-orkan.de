@@ -1,0 +1,3 @@
+Sitemap: https://www.about-orkan.de/sitemap.xml
+User-Agent: *
+Disallow:
